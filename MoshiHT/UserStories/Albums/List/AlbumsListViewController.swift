@@ -89,6 +89,7 @@ private extension AlbumsListViewController {
         tableView.delegate = self
         
         tableView.rowHeight = 100
+        tableView.separatorStyle = .none
         
         tableView.register(
             AlbumCell.self,

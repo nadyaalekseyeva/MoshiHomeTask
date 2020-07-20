@@ -17,6 +17,8 @@
 		E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */; };
 		E815A9F424C5A13500A83812 /* AlbumsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */; };
 		E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9F524C5A38000A83812 /* AlbumCell.swift */; };
+		E815A9FD24C5BE5D00A83812 /* AlbumsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9FC24C5BE5D00A83812 /* AlbumsFlow.swift */; };
+		E815AA0024C5BF6A00A83812 /* AlbumsScreenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9FF24C5BF6A00A83812 /* AlbumsScreenProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
 		E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListPresenter.swift; sourceTree = "<group>"; };
 		E815A9F524C5A38000A83812 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		E815A9FC24C5BE5D00A83812 /* AlbumsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsFlow.swift; sourceTree = "<group>"; };
+		E815A9FF24C5BF6A00A83812 /* AlbumsScreenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsScreenProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 		E815A9E824C5925B00A83812 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				E815A9FE24C5BF4F00A83812 /* Flow */,
 				E815A9EE24C598E500A83812 /* Detail */,
 				E815A9ED24C598DA00A83812 /* List */,
 			);
@@ -184,9 +189,9 @@
 		E815A9ED24C598DA00A83812 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */,
-				E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */,
 				E815A9F524C5A38000A83812 /* AlbumCell.swift */,
+				E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */,
+				E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -196,6 +201,15 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		E815A9FE24C5BF4F00A83812 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E815A9FC24C5BE5D00A83812 /* AlbumsFlow.swift */,
+				E815A9FF24C5BF6A00A83812 /* AlbumsScreenProvider.swift */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E815A9B624C20C7B00A83812 /* AppDelegate.swift in Sources */,
+				E815A9FD24C5BE5D00A83812 /* AlbumsFlow.swift in Sources */,
 				E815A9B824C20C7B00A83812 /* SceneDelegate.swift in Sources */,
 				E815A9EC24C595A000A83812 /* Album.swift in Sources */,
+				E815AA0024C5BF6A00A83812 /* AlbumsScreenProvider.swift in Sources */,
 				E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */,
 				E815A9F424C5A13500A83812 /* AlbumsListPresenter.swift in Sources */,
 				E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */,

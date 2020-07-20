@@ -47,6 +47,11 @@ final class AlbumsListViewController: UIViewController {
         
         setupTableView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.fetch()
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate

@@ -19,6 +19,10 @@
 		E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9F524C5A38000A83812 /* AlbumCell.swift */; };
 		E815A9FD24C5BE5D00A83812 /* AlbumsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9FC24C5BE5D00A83812 /* AlbumsFlow.swift */; };
 		E815AA0024C5BF6A00A83812 /* AlbumsScreenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9FF24C5BF6A00A83812 /* AlbumsScreenProvider.swift */; };
+		E8602B1824C5FC4D009C5CD5 /* AlbumsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1724C5FC4D009C5CD5 /* AlbumsApiService.swift */; };
+		E8602B1A24C607A8009C5CD5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1924C607A8009C5CD5 /* NetworkError.swift */; };
+		E8602B1D24C607C2009C5CD5 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */; };
+		E8602B2024C60A64009C5CD5 /* AlbumsResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		E815A9F524C5A38000A83812 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		E815A9FC24C5BE5D00A83812 /* AlbumsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsFlow.swift; sourceTree = "<group>"; };
 		E815A9FF24C5BF6A00A83812 /* AlbumsScreenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsScreenProvider.swift; sourceTree = "<group>"; };
+		E8602B1724C5FC4D009C5CD5 /* AlbumsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsApiService.swift; sourceTree = "<group>"; };
+		E8602B1924C607A8009C5CD5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
+		E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsResponseDto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		E815A9B424C20C7B00A83812 /* MoshiHT */ = {
 			isa = PBXGroup;
 			children = (
+				E8602B1B24C607B5009C5CD5 /* Common */,
 				E815A9C024C20C7D00A83812 /* LaunchScreen.storyboard */,
 				E815A9E524C2187500A83812 /* Application */,
 				E815A9BE24C20C7D00A83812 /* Assets.xcassets */,
@@ -147,6 +156,7 @@
 		E815A9E624C5923900A83812 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E8A98A3C24C5D21800392FAE /* Network */,
 				E815A9E924C5958500A83812 /* Models */,
 			);
 			path = Core;
@@ -173,6 +183,7 @@
 		E815A9E924C5958500A83812 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E8602B1E24C60A4C009C5CD5 /* ResponseDto */,
 				E815A9EA24C5958F00A83812 /* Domain */,
 			);
 			path = Models;
@@ -210,6 +221,31 @@
 				E815A9FF24C5BF6A00A83812 /* AlbumsScreenProvider.swift */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		E8602B1B24C607B5009C5CD5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E8602B1E24C60A4C009C5CD5 /* ResponseDto */ = {
+			isa = PBXGroup;
+			children = (
+				E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */,
+			);
+			path = ResponseDto;
+			sourceTree = "<group>";
+		};
+		E8A98A3C24C5D21800392FAE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E8602B1724C5FC4D009C5CD5 /* AlbumsApiService.swift */,
+				E8602B1924C607A8009C5CD5 /* NetworkError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +377,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8602B2024C60A64009C5CD5 /* AlbumsResponseDto.swift in Sources */,
+				E8602B1D24C607C2009C5CD5 /* Result+Extensions.swift in Sources */,
+				E8602B1824C5FC4D009C5CD5 /* AlbumsApiService.swift in Sources */,
 				E815A9B624C20C7B00A83812 /* AppDelegate.swift in Sources */,
 				E815A9FD24C5BE5D00A83812 /* AlbumsFlow.swift in Sources */,
 				E815A9B824C20C7B00A83812 /* SceneDelegate.swift in Sources */,
@@ -348,6 +387,7 @@
 				E815AA0024C5BF6A00A83812 /* AlbumsScreenProvider.swift in Sources */,
 				E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */,
 				E815A9F424C5A13500A83812 /* AlbumsListPresenter.swift in Sources */,
+				E8602B1A24C607A8009C5CD5 /* NetworkError.swift in Sources */,
 				E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

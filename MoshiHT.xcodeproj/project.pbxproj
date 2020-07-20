@@ -15,6 +15,8 @@
 		E815A9D824C20C7D00A83812 /* MoshiHTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9D724C20C7D00A83812 /* MoshiHTUITests.swift */; };
 		E815A9EC24C595A000A83812 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9EB24C595A000A83812 /* Album.swift */; };
 		E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */; };
+		E815A9F424C5A13500A83812 /* AlbumsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */; };
+		E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815A9F524C5A38000A83812 /* AlbumCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E815A9D924C20C7D00A83812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E815A9EB24C595A000A83812 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListViewController.swift; sourceTree = "<group>"; };
+		E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListPresenter.swift; sourceTree = "<group>"; };
+		E815A9F524C5A38000A83812 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */,
+				E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */,
+				E815A9F524C5A38000A83812 /* AlbumCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -325,6 +331,8 @@
 				E815A9B824C20C7B00A83812 /* SceneDelegate.swift in Sources */,
 				E815A9EC24C595A000A83812 /* Album.swift in Sources */,
 				E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */,
+				E815A9F424C5A13500A83812 /* AlbumsListPresenter.swift in Sources */,
+				E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

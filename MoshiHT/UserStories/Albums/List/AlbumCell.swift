@@ -64,6 +64,9 @@ final class AlbumCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
+        imageView.layer.borderColor = UIColor.gray.cgColor
+        imageView.layer.borderWidth = 1
         return imageView
     }()
     

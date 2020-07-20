@@ -50,7 +50,9 @@ final class AlbumsListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.fetch()
+        presenter.updateAlbums { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 

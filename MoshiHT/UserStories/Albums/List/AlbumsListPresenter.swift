@@ -9,8 +9,10 @@ import Foundation
 
 final class AlbumsListPresenter {
     
-    private let apiService: AlbumsApiServiceProtocol
+    private(set) var albums = [Album]()
     
+    private let apiService: AlbumsApiServiceProtocol
+
     init(apiService: AlbumsApiServiceProtocol) {
         self.apiService = apiService
     }
@@ -19,15 +21,15 @@ final class AlbumsListPresenter {
         self.init(apiService: AlbumsApiService())
     }
     
-    let albums = Album.testAlbums
-    
-    func fetch() {
+    func updateAlbums(completion: @escaping () -> Void) {
         apiService.fetchAlbums { result in
             switch result {
             case .success(let albums):
-                print(albums.count)
-            case .failure(let error):
-                print("error")
+                self.albums = albums.map { $0.toDomain() }
+                DispatchQueue.main.async {
+                    completion()
+                }
+            case .failure: break
             }
         }
     }

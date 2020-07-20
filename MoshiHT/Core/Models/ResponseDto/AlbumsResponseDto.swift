@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct AlbumsResponseDto: Decodable {
     var albums: [AlbumResponseDto]
@@ -26,6 +27,18 @@ struct AlbumResponseDto: Decodable {
     var url: SpotifyURLDto
     var artists: [ArtistDto]
     // NA: add images
+    
+    func toDomain() -> Album {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return Album(
+            name: name,
+            releaseDate: dateFormatter.date(from: releaseDate),
+            image: UIImage(named: "TestCover"), // NA: change
+            url: url.spotify,
+            artists: artists.map { Artist(name: $0.name) }
+        )
+    }
     
     private enum CodingKeys: String, CodingKey {
         case name

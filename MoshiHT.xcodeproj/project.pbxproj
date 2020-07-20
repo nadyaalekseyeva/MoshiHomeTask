@@ -23,6 +23,7 @@
 		E8602B1A24C607A8009C5CD5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1924C607A8009C5CD5 /* NetworkError.swift */; };
 		E8602B1D24C607C2009C5CD5 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */; };
 		E8602B2024C60A64009C5CD5 /* AlbumsResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */; };
+		E8602B2224C60B91009C5CD5 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2124C60B91009C5CD5 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		E8602B1924C607A8009C5CD5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsResponseDto.swift; sourceTree = "<group>"; };
+		E8602B2124C60B91009C5CD5 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				E815A9EB24C595A000A83812 /* Album.swift */,
+				E8602B2124C60B91009C5CD5 /* Artist.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				E815A9EC24C595A000A83812 /* Album.swift in Sources */,
 				E815AA0024C5BF6A00A83812 /* AlbumsScreenProvider.swift in Sources */,
 				E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */,
+				E8602B2224C60B91009C5CD5 /* Artist.swift in Sources */,
 				E815A9F424C5A13500A83812 /* AlbumsListPresenter.swift in Sources */,
 				E8602B1A24C607A8009C5CD5 /* NetworkError.swift in Sources */,
 				E815A9F624C5A38000A83812 /* AlbumCell.swift in Sources */,

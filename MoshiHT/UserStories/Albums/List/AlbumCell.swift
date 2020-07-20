@@ -53,7 +53,11 @@ final class AlbumCell: UITableViewCell {
     func update(with album: Album) {
         coverImageView.image = album.image
         titleLabel.text = album.name
-        subtitleLabel.text = formattedDateString(from: album.releaseDate)
+
+        if let date = album.releaseDate {
+            subtitleLabel.text = formattedDateString(from: date)
+        }
+        
         // NA: add share action
     }
     

@@ -10,18 +10,20 @@ import UIKit
 final class AlbumCell: UITableViewCell {
     static let identifier = String(describing: AlbumCell.self)
     
+    private var shareAction: ((URL) -> Void)?
+    private var url: URL?
+    
     override init(
         style: UITableViewCell.CellStyle,
         reuseIdentifier: String?
     ) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        // Layout
+
         let offset: CGFloat = 16
         
-        addSubview(coverImageView)
-        addSubview(textsStackView)
-        addSubview(shareButton)
+        contentView.addSubview(coverImageView)
+        contentView.addSubview(textsStackView)
+        contentView.addSubview(shareButton)
         
         let constraints = [
             coverImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset / 2),
@@ -48,9 +50,7 @@ final class AlbumCell: UITableViewCell {
         subtitleLabel.text = nil
     }
     
-    // MARK: - Update
-    
-    func update(with album: Album) {
+    func update(with album: Album, shareAction: @escaping (URL) -> Void) {
         coverImageView.image = album.image
         titleLabel.text = album.name
 
@@ -58,7 +58,12 @@ final class AlbumCell: UITableViewCell {
             subtitleLabel.text = formattedDateString(from: date)
         }
         
-        // NA: add share action
+        self.shareAction = shareAction
+        self.url = album.url
+    }
+    
+    @objc func shareButtonAction() {
+        if let url = url { shareAction?(url) }
     }
     
     // MARK: - UI elements
@@ -99,10 +104,11 @@ final class AlbumCell: UITableViewCell {
         return stackView
     }()
     
-    private let shareButton: UIButton = {
+    private lazy var shareButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        button.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
         return button
     }()
     

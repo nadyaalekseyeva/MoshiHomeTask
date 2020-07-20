@@ -11,6 +11,6 @@ struct Album {
     var name: String
     var releaseDate: Date?
     var image: UIImage?
-    var url: String
+    var url: URL?
     var artists: [Artist]
 }

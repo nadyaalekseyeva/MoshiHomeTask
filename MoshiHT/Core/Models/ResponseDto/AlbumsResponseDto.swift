@@ -35,7 +35,7 @@ struct AlbumResponseDto: Decodable {
             name: name,
             releaseDate: dateFormatter.date(from: releaseDate),
             image: UIImage(named: "TestCover"), // NA: change
-            url: url.spotify,
+            url: URL(string: url.spotify),
             artists: artists.map { Artist(name: $0.name) }
         )
     }

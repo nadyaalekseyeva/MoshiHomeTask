@@ -99,13 +99,12 @@
 		E815A9B424C20C7B00A83812 /* MoshiHT */ = {
 			isa = PBXGroup;
 			children = (
-				E815A9B524C20C7B00A83812 /* AppDelegate.swift */,
-				E815A9B724C20C7B00A83812 /* SceneDelegate.swift */,
-				E815A9B924C20C7B00A83812 /* ViewController.swift */,
-				E815A9BB24C20C7B00A83812 /* Main.storyboard */,
+				E815A9E724C5924B00A83812 /* UserStories */,
+				E815A9E624C5923900A83812 /* Core */,
+				E815A9E524C2187500A83812 /* Application */,
+				E815A9C324C20C7D00A83812 /* Info.plist */,
 				E815A9BE24C20C7D00A83812 /* Assets.xcassets */,
 				E815A9C024C20C7D00A83812 /* LaunchScreen.storyboard */,
-				E815A9C324C20C7D00A83812 /* Info.plist */,
 			);
 			path = MoshiHT;
 			sourceTree = "<group>";
@@ -126,6 +125,39 @@
 				E815A9D924C20C7D00A83812 /* Info.plist */,
 			);
 			path = MoshiHTUITests;
+			sourceTree = "<group>";
+		};
+		E815A9E524C2187500A83812 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E815A9B524C20C7B00A83812 /* AppDelegate.swift */,
+				E815A9B724C20C7B00A83812 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E815A9E624C5923900A83812 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E815A9E724C5924B00A83812 /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				E815A9BB24C20C7B00A83812 /* Main.storyboard */,
+				E815A9E824C5925B00A83812 /* Albums */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		E815A9E824C5925B00A83812 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				E815A9B924C20C7B00A83812 /* ViewController.swift */,
+			);
+			path = Albums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

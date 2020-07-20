@@ -73,7 +73,7 @@ final class AlbumCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .label
         label.font = UIFont.systemFont(ofSize: 16)
         label.numberOfLines = 2
         return label
@@ -82,7 +82,7 @@ final class AlbumCell: UITableViewCell {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .darkGray
+        label.textColor = .secondaryLabel
         label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()

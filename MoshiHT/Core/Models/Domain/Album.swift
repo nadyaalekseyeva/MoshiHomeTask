@@ -5,12 +5,12 @@
 //  Created by Nadzeya Aliakseyeva on 20/07/2020.
 //
 
-import UIKit
+import Foundation
 
 struct Album {
     var name: String
     var releaseDate: Date?
-    var image: UIImage?
+    var imageURL: URL?
     var url: URL?
     var artists: [Artist]
 }

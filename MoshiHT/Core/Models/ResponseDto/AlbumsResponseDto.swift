@@ -8,8 +8,12 @@
 import Foundation
 import UIKit
 
-struct AlbumsResponseDto: Decodable {
-    var albums: [AlbumResponseDto]
+struct AlbumsSearchResponseDto: Decodable {
+    var albums: SearchResponseDto
+}
+
+struct SearchResponseDto: Decodable {
+    var items: [AlbumResponseDto]
 }
 
 struct AlbumResponseDto: Decodable {
@@ -22,19 +26,31 @@ struct AlbumResponseDto: Decodable {
         var spotify: String
     }
     
+    struct ImageDto: Decodable {
+        var height: Int
+        var width: Int
+        var url: String
+    }
+    
     var name: String
     var releaseDate: String
     var url: SpotifyURLDto
     var artists: [ArtistDto]
-    // NA: add images
+    var images: [ImageDto]
     
     func toDomain() -> Album {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        var imageURL: URL?
+        if let imageDto = images.first(where: { $0.height == 300 }) {
+            imageURL = URL(string: imageDto.url)
+        }
+        
         return Album(
             name: name,
             releaseDate: dateFormatter.date(from: releaseDate),
-            image: UIImage(named: "TestCover"), // NA: change
+            imageURL: imageURL,
             url: URL(string: url.spotify),
             artists: artists.map { Artist(name: $0.name) }
         )
@@ -45,5 +61,6 @@ struct AlbumResponseDto: Decodable {
         case releaseDate = "release_date"
         case url = "external_urls"
         case artists
+        case images
     }
 }

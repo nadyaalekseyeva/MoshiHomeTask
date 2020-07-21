@@ -6,30 +6,39 @@
 //
 
 import Foundation
+import UIKit
 
 final class AlbumsListPresenter {
     
     private(set) var albums = [Album]()
     
-    private let apiService: AlbumsApiServiceProtocol
-
-    init(apiService: AlbumsApiServiceProtocol) {
-        self.apiService = apiService
+    private let interactor: AlbumsListInteractorProtocol
+    
+    init(interactor: AlbumsListInteractorProtocol) {
+        self.interactor = interactor
     }
     
     convenience init() {
-        self.init(apiService: AlbumsApiService())
+        self.init(interactor: AlbumsListInteractor())
     }
     
+    
     func updateAlbums(completion: @escaping () -> Void) {
-        apiService.fetchAlbums { result in
-            switch result {
-            case .success(let albums):
-                self.albums = albums.map { $0.toDomain() }
-                DispatchQueue.main.async {
-                    completion()
-                }
-            case .failure: break
+        interactor.fetchAlbums { result in
+            guard case .success(let albums) = result else { return }
+            self.albums = albums
+            DispatchQueue.main.async {
+                completion()
+            }
+        }
+    }
+    
+    func loadImage(url: URL, completion: @escaping (UIImage) -> Void) {
+        interactor.loadImage(url: url) { result in
+            guard case .success(let image) = result else { return }
+            
+            DispatchQueue.main.async {
+                completion(image)
             }
         }
     }

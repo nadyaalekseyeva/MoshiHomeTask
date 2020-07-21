@@ -76,10 +76,22 @@ extension AlbumsListViewController: UITableViewDataSource, UITableViewDelegate {
         ) as? AlbumCell
         else { return UITableViewCell() }
         
-        cell.update(with: presenter.albums[indexPath.row]) { [weak self] url in
+        let album = presenter.albums[indexPath.row]
+        let cellModel = AlbumCellModel(
+            coverImage: nil,
+            releaseDate: album.releaseDate,
+            title: album.name,
+            url: album.url
+        )
+        cell.update(with: cellModel) { [weak self] url in
             let ac = UIActivityViewController(activityItems: [url], applicationActivities: nil)
             self?.present(ac, animated: true)
-            // NA: should be done by flow
+        }
+        
+        if let url = album.imageURL {
+            presenter.loadImage(url: url) { image in
+                cell.updateImage(with: image)
+            }
         }
         
         return cell

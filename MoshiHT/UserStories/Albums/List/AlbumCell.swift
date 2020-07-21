@@ -50,16 +50,20 @@ final class AlbumCell: UITableViewCell {
         subtitleLabel.text = nil
     }
     
-    func update(with album: Album, shareAction: @escaping (URL) -> Void) {
-        coverImageView.image = album.image
-        titleLabel.text = album.name
+    func update(with albumModel: AlbumCellModel, shareAction: @escaping (URL) -> Void) {
+        coverImageView.image = albumModel.coverImage
+        titleLabel.text = albumModel.title
 
-        if let date = album.releaseDate {
+        if let date = albumModel.releaseDate {
             subtitleLabel.text = formattedDateString(from: date)
         }
         
         self.shareAction = shareAction
-        self.url = album.url
+        self.url = albumModel.url
+    }
+    
+    func updateImage(with image: UIImage) {
+        coverImageView.image = image
     }
     
     @objc func shareButtonAction() {
@@ -125,4 +129,11 @@ private extension AlbumCell {
         return dateFormatter.string(from: date)
     }
     
+}
+
+struct AlbumCellModel {
+    var coverImage: UIImage?
+    var releaseDate: Date?
+    var title: String
+    var url: URL?
 }

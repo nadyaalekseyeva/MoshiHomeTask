@@ -24,6 +24,8 @@
 		E8602B1D24C607C2009C5CD5 /* Result+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */; };
 		E8602B2024C60A64009C5CD5 /* AlbumsResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */; };
 		E8602B2224C60B91009C5CD5 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2124C60B91009C5CD5 /* Artist.swift */; };
+		E8602B2424C6F331009C5CD5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2324C6F331009C5CD5 /* ImageLoader.swift */; };
+		E8602B2624C6FAFE009C5CD5 /* AlbumsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2524C6FAFE009C5CD5 /* AlbumsListInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		E8602B1C24C607C2009C5CD5 /* Result+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extensions.swift"; sourceTree = "<group>"; };
 		E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsResponseDto.swift; sourceTree = "<group>"; };
 		E8602B2124C60B91009C5CD5 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		E8602B2324C6F331009C5CD5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E8602B2524C6FAFE009C5CD5 /* AlbumsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				E815A9F524C5A38000A83812 /* AlbumCell.swift */,
+				E8602B2524C6FAFE009C5CD5 /* AlbumsListInteractor.swift */,
 				E815A9F324C5A13500A83812 /* AlbumsListPresenter.swift */,
 				E815A9EF24C5991B00A83812 /* AlbumsListViewController.swift */,
 			);
@@ -247,6 +252,7 @@
 			children = (
 				E8602B1724C5FC4D009C5CD5 /* AlbumsApiService.swift */,
 				E8602B1924C607A8009C5CD5 /* NetworkError.swift */,
+				E8602B2324C6F331009C5CD5 /* ImageLoader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -380,12 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8602B2424C6F331009C5CD5 /* ImageLoader.swift in Sources */,
 				E8602B2024C60A64009C5CD5 /* AlbumsResponseDto.swift in Sources */,
 				E8602B1D24C607C2009C5CD5 /* Result+Extensions.swift in Sources */,
 				E8602B1824C5FC4D009C5CD5 /* AlbumsApiService.swift in Sources */,
 				E815A9B624C20C7B00A83812 /* AppDelegate.swift in Sources */,
 				E815A9FD24C5BE5D00A83812 /* AlbumsFlow.swift in Sources */,
 				E815A9B824C20C7B00A83812 /* SceneDelegate.swift in Sources */,
+				E8602B2624C6FAFE009C5CD5 /* AlbumsListInteractor.swift in Sources */,
 				E815A9EC24C595A000A83812 /* Album.swift in Sources */,
 				E815AA0024C5BF6A00A83812 /* AlbumsScreenProvider.swift in Sources */,
 				E815A9F024C5991B00A83812 /* AlbumsListViewController.swift in Sources */,

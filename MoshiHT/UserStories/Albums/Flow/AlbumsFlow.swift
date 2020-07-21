@@ -41,17 +41,20 @@ private extension AlbumsFlow {
             return
         }
 
-        let controller = screenProvider.makeAlbumsListScreen()
+        let controller = screenProvider.makeAlbumsListScreen { album in
+            self.showAlbumDetailsScreen(album: album)
+        }
+        
         navigationController.viewControllers = [controller]
     }
     
-    func showAlbumDetailsScreen() {
+    func showAlbumDetailsScreen(album: Album) {
         guard let navigationController = navigationController else {
             assertionFailure("Navigation controller should not be nil")
             return
         }
 
-        let controller = screenProvider.makeAlbumDetailsScreen()
+        let controller = screenProvider.makeAlbumDetailsScreen(album: album)
         navigationController.pushViewController(controller, animated: true)
     }
     

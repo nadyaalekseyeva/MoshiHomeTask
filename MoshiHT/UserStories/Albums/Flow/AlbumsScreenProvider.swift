@@ -8,19 +8,20 @@
 import UIKit
 
 protocol AlbumsScreenProviderProtocol {
-    func makeAlbumsListScreen() -> UIViewController
-    func makeAlbumDetailsScreen() -> UIViewController
+    func makeAlbumsListScreen(selectionAction: @escaping (Album) -> Void) -> UIViewController
+    func makeAlbumDetailsScreen(album: Album) -> UIViewController
 }
 
 struct AlbumsScreenProvider: AlbumsScreenProviderProtocol {
     
-    func makeAlbumsListScreen() -> UIViewController {
-        let presenter = AlbumsListPresenter()
+    func makeAlbumsListScreen(selectionAction: @escaping (Album) -> Void) -> UIViewController {
+        let presenter = AlbumsListPresenter(selectionAction: selectionAction)
         return AlbumsListViewController(presenter: presenter)
     }
     
-    func makeAlbumDetailsScreen() -> UIViewController {
-        return UIViewController()
+    func makeAlbumDetailsScreen(album: Album) -> UIViewController {
+        let detailsPresenter = AlbumDetailsPresenter(album: album)
+        return AlbumDetailsViewController(presenter: detailsPresenter)
     }
     
 }

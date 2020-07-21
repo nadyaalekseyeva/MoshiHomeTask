@@ -97,6 +97,12 @@ extension AlbumsListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        presenter.didSelectRow(at: indexPath)
+    }
+    
 }
 
 // MARK: - UI elements setup

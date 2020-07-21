@@ -26,6 +26,10 @@
 		E8602B2224C60B91009C5CD5 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2124C60B91009C5CD5 /* Artist.swift */; };
 		E8602B2424C6F331009C5CD5 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2324C6F331009C5CD5 /* ImageLoader.swift */; };
 		E8602B2624C6FAFE009C5CD5 /* AlbumsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2524C6FAFE009C5CD5 /* AlbumsListInteractor.swift */; };
+		E8602B2824C6FF61009C5CD5 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2724C6FF61009C5CD5 /* AlbumDetailsViewController.swift */; };
+		E8602B2A24C6FF83009C5CD5 /* AlbumDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2924C6FF83009C5CD5 /* AlbumDetailsPresenter.swift */; };
+		E8602B2D24C70285009C5CD5 /* InMemoryImagesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8602B2C24C70285009C5CD5 /* InMemoryImagesStore.swift */; };
+		E8630B0824C720DC005A8043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8630B0724C720DC005A8043 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +55,6 @@
 		E815A9B724C20C7B00A83812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E815A9BE24C20C7D00A83812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E815A9C124C20C7D00A83812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E815A9C324C20C7D00A83812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MoshiHT/Application/Info.plist; sourceTree = SOURCE_ROOT; };
 		E815A9C824C20C7D00A83812 /* MoshiHTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoshiHTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E815A9CC24C20C7D00A83812 /* MoshiHTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoshiHTTests.swift; sourceTree = "<group>"; };
 		E815A9CE24C20C7D00A83812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +74,11 @@
 		E8602B2124C60B91009C5CD5 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		E8602B2324C6F331009C5CD5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		E8602B2524C6FAFE009C5CD5 /* AlbumsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsListInteractor.swift; sourceTree = "<group>"; };
+		E8602B2724C6FF61009C5CD5 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		E8602B2924C6FF83009C5CD5 /* AlbumDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsPresenter.swift; sourceTree = "<group>"; };
+		E8602B2C24C70285009C5CD5 /* InMemoryImagesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryImagesStore.swift; sourceTree = "<group>"; };
+		E8602B3024C71652009C5CD5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8630B0724C720DC005A8043 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +160,10 @@
 		E815A9E524C2187500A83812 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				E815A9C324C20C7D00A83812 /* Info.plist */,
+				E8602B3024C71652009C5CD5 /* Info.plist */,
 				E815A9B524C20C7B00A83812 /* AppDelegate.swift */,
 				E815A9B724C20C7B00A83812 /* SceneDelegate.swift */,
+				E8630B0724C720DC005A8043 /* Main.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -162,6 +171,7 @@
 		E815A9E624C5923900A83812 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E8602B2B24C70263009C5CD5 /* Cache */,
 				E8A98A3C24C5D21800392FAE /* Network */,
 				E815A9E924C5958500A83812 /* Models */,
 			);
@@ -218,6 +228,8 @@
 		E815A9EE24C598E500A83812 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E8602B2724C6FF61009C5CD5 /* AlbumDetailsViewController.swift */,
+				E8602B2924C6FF83009C5CD5 /* AlbumDetailsPresenter.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -245,6 +257,14 @@
 				E8602B1F24C60A64009C5CD5 /* AlbumsResponseDto.swift */,
 			);
 			path = ResponseDto;
+			sourceTree = "<group>";
+		};
+		E8602B2B24C70263009C5CD5 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				E8602B2C24C70285009C5CD5 /* InMemoryImagesStore.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		E8A98A3C24C5D21800392FAE /* Network */ = {
@@ -360,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8630B0824C720DC005A8043 /* Main.storyboard in Resources */,
 				E815A9C224C20C7D00A83812 /* LaunchScreen.storyboard in Resources */,
 				E815A9BF24C20C7D00A83812 /* Assets.xcassets in Resources */,
 			);
@@ -388,6 +409,9 @@
 			files = (
 				E8602B2424C6F331009C5CD5 /* ImageLoader.swift in Sources */,
 				E8602B2024C60A64009C5CD5 /* AlbumsResponseDto.swift in Sources */,
+				E8602B2824C6FF61009C5CD5 /* AlbumDetailsViewController.swift in Sources */,
+				E8602B2D24C70285009C5CD5 /* InMemoryImagesStore.swift in Sources */,
+				E8602B2A24C6FF83009C5CD5 /* AlbumDetailsPresenter.swift in Sources */,
 				E8602B1D24C607C2009C5CD5 /* Result+Extensions.swift in Sources */,
 				E8602B1824C5FC4D009C5CD5 /* AlbumsApiService.swift in Sources */,
 				E815A9B624C20C7B00A83812 /* AppDelegate.swift in Sources */,

@@ -13,16 +13,23 @@ final class AlbumsListPresenter {
     private(set) var albums = [Album]()
     
     private let interactor: AlbumsListInteractorProtocol
+    private let selectionAction: (Album) -> Void
     
-    init(interactor: AlbumsListInteractorProtocol) {
+    init(
+        interactor: AlbumsListInteractorProtocol,
+        selectionAction: @escaping (Album) -> Void
+    ) {
         self.interactor = interactor
+        self.selectionAction = selectionAction
     }
     
-    convenience init() {
-        self.init(interactor: AlbumsListInteractor())
+    convenience init(selectionAction: @escaping (Album) -> Void) {
+        self.init(
+            interactor: AlbumsListInteractor(),
+            selectionAction: selectionAction
+        )
     }
-    
-    
+
     func updateAlbums(completion: @escaping () -> Void) {
         interactor.fetchAlbums { result in
             guard case .success(let albums) = result else { return }
@@ -34,13 +41,18 @@ final class AlbumsListPresenter {
     }
     
     func loadImage(url: URL, completion: @escaping (UIImage) -> Void) {
-        interactor.loadImage(url: url) { result in
+        interactor.getImage(url: url) { result in
             guard case .success(let image) = result else { return }
             
             DispatchQueue.main.async {
                 completion(image)
             }
         }
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        let album = albums[indexPath.row]
+        selectionAction(album)
     }
 
 }

@@ -21,7 +21,7 @@ final class AlbumsApiService: AlbumsApiServiceProtocol {
         }
         
         var request = URLRequest(url: url)
-        request.setValue("Bearer BQCMx1BaT7huSpNLcra--sJhA84VFe3BwDvje5pR-qswfeYmwUGOWSNEXRRFUxGycL8c7b9wXR50gAcXZvjXda-z1BA-I-lolYHO1fb-K5LhH20H-s5j4zwTvXIQt6N7UWLl3QMSajl3-iCSyi5YPngZAEp70JPclmhRg6Tbr4kpad_Trw", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer BQBM2lCjav90gAmphm2GhQaTE-iMTdZG3k__FhKeARLczQiTsSoRsIWM0E46_9isf6G1YJgw6nRZ3oYlg-3W0jxHDHefRo7cPCKZ2WinBdWFb2K0sqpzPqLlrwW3UEzR4LXC1qPL-y5EiA6-ySX48ScsnVJX1HF5_hQp4CdPK0z-KALH7Q", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {

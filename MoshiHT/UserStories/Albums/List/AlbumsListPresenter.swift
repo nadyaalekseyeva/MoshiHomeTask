@@ -30,12 +30,20 @@ final class AlbumsListPresenter {
         )
     }
 
-    func updateAlbums(completion: @escaping () -> Void) {
-        interactor.fetchAlbums { result in
-            guard case .success(let albums) = result else { return }
-            self.albums = albums
-            DispatchQueue.main.async {
-                completion()
+    func updateAlbums(completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        interactor.fetchAlbums { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let albums):
+                self.albums = albums
+                DispatchQueue.main.async {
+                    completion(.success)
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    completion(.failure(.unauthorized))
+                }
             }
         }
     }

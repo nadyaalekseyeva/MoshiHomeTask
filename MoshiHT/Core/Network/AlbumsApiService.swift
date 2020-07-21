@@ -13,6 +13,8 @@ protocol AlbumsApiServiceProtocol {
 
 final class AlbumsApiService: AlbumsApiServiceProtocol {
     
+    private let accessToken = "Put your token here"
+    
     func searchAlbums(completion: @escaping (Result<[AlbumResponseDto], NetworkError>) -> Void) {
         let baseURL = "https://api.spotify.com/v1/search"
         guard let url = URL(string: "\(baseURL)?q=jazz&type=album") else {
@@ -21,7 +23,7 @@ final class AlbumsApiService: AlbumsApiServiceProtocol {
         }
         
         var request = URLRequest(url: url)
-        request.setValue("Bearer BQBM2lCjav90gAmphm2GhQaTE-iMTdZG3k__FhKeARLczQiTsSoRsIWM0E46_9isf6G1YJgw6nRZ3oYlg-3W0jxHDHefRo7cPCKZ2WinBdWFb2K0sqpzPqLlrwW3UEzR4LXC1qPL-y5EiA6-ySX48ScsnVJX1HF5_hQp4CdPK0z-KALH7Q", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if error != nil {

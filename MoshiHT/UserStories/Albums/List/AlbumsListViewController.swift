@@ -50,9 +50,26 @@ final class AlbumsListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.updateAlbums { [weak self] in
-            self?.tableView.reloadData()
+        presenter.updateAlbums { [weak self] result in
+            switch result {
+            case .success:
+                self?.tableView.reloadData()
+            case .failure(let error) where .unauthorized == error:
+                self?.showError()
+            default: break
+            }
+            
         }
+    }
+    
+    func showError() {
+        let alertController = UIAlertController(
+            title: "Unauthorized",
+            message: "Please make sure you put a valid access token (AlbumsApiService.swift)",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "Got it", style: .default))
+        present(alertController, animated: true)
     }
 }
 
